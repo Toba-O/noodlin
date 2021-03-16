@@ -1,3 +1,24 @@
 <style>
+  @keyframes logoAnimation {
+  from {
+    transform: rotate(0);
+  }
   
-  </style
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#logo.animate {
+  animation: logoAnimation 1s;
+}
+</style>
+
+<img id="logo" src="https://placekitten.com/g/100/100" alt="">
+
+<script>
+  if (window.sessionStorage.getItem('logoAnimated') === null) {
+  document.getElementById("logo").classList.add('animate');
+  window.sessionStorage.setItem('logoAnimated', 1);
+}
+</script>
